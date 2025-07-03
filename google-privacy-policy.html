@@ -320,13 +320,16 @@
         <h3>2.2 Encrypted User Data</h3>
         <ul>
           <li>
-            <strong>Passwords</strong>: Stored in encrypted format using AES-256
-            encryption
+            <strong>Passwords</strong>: Stored in encrypted format using
+            AES-256-CBC encryption with unique initialization vectors
           </li>
-          <li><strong>Notes</strong>: Encrypted and stored securely</li>
+          <li>
+            <strong>Notes</strong>: Encrypted using the same AES-256 standard
+            and stored securely
+          </li>
           <li>
             <strong>Categories</strong>: User-created categories for
-            organization
+            organization (encrypted)
           </li>
           <li><strong>URLs</strong>: Associated website URLs (encrypted)</li>
           <li>
@@ -410,16 +413,27 @@
           <h3>4.1 Encryption Model</h3>
           <ul>
             <li>
-              All sensitive data is encrypted locally on your device before
-              transmission
+              All sensitive data is encrypted locally on your device using
+              AES-256-CBC with random initialization vectors before transmission
             </li>
-            <li>We use your master password to derive encryption keys</li>
+            <li>
+              We use your master password with SHA-256 hashing to derive 256-bit
+              encryption keys
+            </li>
+            <li>
+              Each encryption operation uses a unique 16-byte initialization
+              vector (IV) for enhanced security
+            </li>
             <li>
               <strong
-                >We cannot access your decrypted passwords or notes</strong
+                >We cannot access your decrypted passwords or notes due to
+                zero-knowledge architecture</strong
               >
             </li>
             <li>Even our employees cannot view your sensitive information</li>
+            <li>
+              All network communications are secured with TLS 1.3 encryption
+            </li>
           </ul>
 
           <h3>4.2 Master Password</h3>
@@ -457,11 +471,20 @@
         </div>
         <ul>
           <li>
-            <strong>Encryption</strong>: AES-256 encryption for all sensitive
-            data
+            <strong>Encryption</strong>: AES-256-CBC encryption with 256-bit
+            keys derived from SHA-256 hashing for all sensitive data
           </li>
           <li>
-            <strong>Transport Security</strong>: TLS 1.3 for data transmission
+            <strong>Transport Security</strong>: TLS 1.3 with automatic fallback
+            to TLS 1.2 for secure data transmission
+          </li>
+          <li>
+            <strong>Key Management</strong>: Secure key storage using iOS
+            Keychain and Android Keystore
+          </li>
+          <li>
+            <strong>Biometric Protection</strong>: Device biometric
+            authentication (fingerprint, Face ID) for app access
           </li>
           <li>
             <strong>Access Controls</strong>: Strict access controls for our
@@ -619,6 +642,7 @@
         <ul>
           <li>
             <strong>Encryption</strong>: All data encrypted during transfer
+            using TLS 1.3 with automatic fallback to TLS 1.2
           </li>
           <li>
             <strong>Legal Frameworks</strong>: Transfers comply with GDPR, CCPA,
