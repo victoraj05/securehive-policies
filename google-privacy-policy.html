@@ -338,7 +338,19 @@
           </li>
         </ul>
 
-        <h3>2.3 Technical Information</h3>
+        <h3>2.3 Recovery Data</h3>
+        <ul>
+          <li>
+            <strong>Encrypted Recovery Key</strong>: Your derived encryption key
+            encrypted with your recovery code
+          </li>
+          <li>
+            <strong>Recovery Metadata</strong>: Information needed for the
+            recovery process (no sensitive data)
+          </li>
+        </ul>
+
+        <h3>2.4 Technical Information</h3>
         <ul>
           <li>
             <strong>Device Information</strong>: Device type, operating system
@@ -356,7 +368,7 @@
           </li>
         </ul>
 
-        <h3>2.4 Biometric Data</h3>
+        <h3>2.5 Biometric Data</h3>
         <ul>
           <li>
             <strong>Fingerprint/Face ID</strong>: Stored locally on device only
@@ -436,11 +448,35 @@
             </li>
           </ul>
 
-          <h3>4.2 Master Password</h3>
+          <h3>4.2 Master Password and Recovery System</h3>
           <ul>
-            <li>Your master password is never transmitted to our servers</li>
-            <li>We cannot recover your master password if lost</li>
-            <li>Only you can decrypt your data with your master password</li>
+            <li>
+              Your master password is never transmitted to our servers in plain
+              text
+            </li>
+            <li>
+              We derive an encryption key from your master password and user ID
+              using PBKDF2
+            </li>
+            <li>
+              This derived key is encrypted using your recovery code (which you
+              generate) and stored on our servers
+            </li>
+            <li>
+              The recovery code allows you to recover access to your encrypted
+              data if you forget your master password
+            </li>
+            <li>
+              We cannot access your plain text master password or recovery code
+            </li>
+            <li>
+              Only you can decrypt your data with your master password or
+              recovery code
+            </li>
+            <li>
+              Recovery codes are generated locally and never transmitted in
+              plain text
+            </li>
           </ul>
         </div>
 
