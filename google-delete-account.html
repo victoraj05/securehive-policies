@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Delete Account - SecureNest Password Manager</title>
+    <meta
+      name="description"
+      content="Learn how to delete your SecureNest account and what happens to your data"
+    />
+    <meta name="robots" content="index, follow" />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Oxygen, Ubuntu, Cantarell, sans-serif;
+        line-height: 1.6;
+        color: #333;
+        background-color: #f8fafc;
+        padding: 20px;
+      }
+
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+      }
+
+      .header {
+        background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+        color: white;
+        padding: 40px 30px;
+        text-align: center;
+      }
+
+      .header h1 {
+        font-size: 2.5em;
+        margin-bottom: 10px;
+        font-weight: 700;
+      }
+
+      .header .subtitle {
+        font-size: 1.1em;
+        opacity: 0.9;
+        margin-bottom: 5px;
+      }
+
+      .warning-badge {
+        background: rgba(255, 255, 255, 0.1);
+        padding: 8px 16px;
+        border-radius: 20px;
+        display: inline-block;
+        margin-top: 15px;
+        font-size: 0.9em;
+      }
+
+      .content {
+        padding: 40px 30px;
+      }
+
+      h2 {
+        color: #2d3748;
+        margin-top: 40px;
+        margin-bottom: 20px;
+        font-size: 1.8em;
+        border-bottom: 2px solid #ef4444;
+        padding-bottom: 10px;
+      }
+
+      h2:first-child {
+        margin-top: 0;
+      }
+
+      h3 {
+        color: #4a5568;
+        margin-top: 30px;
+        margin-bottom: 15px;
+        font-size: 1.3em;
+      }
+
+      p {
+        margin-bottom: 15px;
+        text-align: justify;
+      }
+
+      ul {
+        margin-left: 20px;
+        margin-bottom: 15px;
+      }
+
+      li {
+        margin-bottom: 8px;
+      }
+
+      .warning-box {
+        background: #fef2f2;
+        border-left: 4px solid #ef4444;
+        padding: 20px;
+        margin: 20px 0;
+        border-radius: 0 8px 8px 0;
+      }
+
+      .warning-box h3 {
+        color: #dc2626;
+        margin-top: 0;
+      }
+
+      .info-box {
+        background: #f0f9ff;
+        border-left: 4px solid #3b82f6;
+        padding: 20px;
+        margin: 20px 0;
+        border-radius: 0 8px 8px 0;
+      }
+
+      .info-box h3 {
+        color: #1d4ed8;
+        margin-top: 0;
+      }
+
+      .step-box {
+        background: #f7fafc;
+        border: 1px solid #e2e8f0;
+        padding: 20px;
+        margin: 15px 0;
+        border-radius: 8px;
+        position: relative;
+      }
+
+      .step-number {
+        background: #3b82f6;
+        color: white;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        position: absolute;
+        top: -15px;
+        left: 20px;
+      }
+
+      .step-content {
+        margin-left: 40px;
+      }
+
+      .contact-info {
+        background: #edf2f7;
+        padding: 25px;
+        border-radius: 8px;
+        margin: 30px 0;
+      }
+
+      .contact-info h3 {
+        color: #2d3748;
+        margin-top: 0;
+      }
+
+      .contact-link {
+        color: #3b82f6;
+        text-decoration: none;
+        font-weight: 500;
+      }
+
+      .contact-link:hover {
+        text-decoration: underline;
+      }
+
+      .footer {
+        background: #2d3748;
+        color: white;
+        padding: 30px;
+        text-align: center;
+        font-size: 0.9em;
+      }
+
+      .footer a {
+        color: #90cdf4;
+        text-decoration: none;
+      }
+
+      .footer a:hover {
+        text-decoration: underline;
+      }
+
+      .timeline {
+        background: #f8fafc;
+        padding: 20px;
+        border-radius: 8px;
+        margin: 20px 0;
+      }
+
+      .timeline-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+      }
+
+      .timeline-dot {
+        width: 12px;
+        height: 12px;
+        background: #3b82f6;
+        border-radius: 50%;
+        margin-right: 15px;
+        flex-shrink: 0;
+      }
+
+      .timeline-content {
+        flex: 1;
+      }
+
+      .timeline-time {
+        font-weight: bold;
+        color: #1d4ed8;
+        margin-right: 10px;
+      }
+
+      /* Mobile Responsive */
+      @media (max-width: 768px) {
+        body {
+          padding: 10px;
+        }
+
+        .header {
+          padding: 30px 20px;
+        }
+
+        .header h1 {
+          font-size: 2em;
+        }
+
+        .content {
+          padding: 30px 20px;
+        }
+
+        .footer {
+          padding: 20px;
+        }
+
+        h2 {
+          font-size: 1.5em;
+        }
+
+        h3 {
+          font-size: 1.2em;
+        }
+
+        .contact-info {
+          padding: 20px;
+        }
+
+        .step-content {
+          margin-left: 20px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .header h1 {
+          font-size: 1.8em;
+        }
+
+        .content {
+          padding: 20px 15px;
+        }
+
+        .footer {
+          padding: 15px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>SecureNest</h1>
+        <div class="subtitle">Account Deletion</div>
+        <div class="warning-badge">⚠️ This action cannot be undone</div>
+      </div>
+
+      <div class="content">
+        <div class="warning-box">
+          <h3>⚠️ Important Notice</h3>
+          <p>
+            <strong>
+              Deleting your SecureNest account will permanently remove all your
+              data, including passwords, notes, and categories. This action
+              cannot be reversed.
+            </strong>
+          </p>
+          <p>
+            Due to our zero-knowledge architecture, we cannot recover your data
+            once deleted. Please make sure to export any important information
+            before proceeding.
+          </p>
+        </div>
+
+        <h2>How to Delete Your Account</h2>
+
+        <h3>Method 1: Through the SecureNest App</h3>
+
+        <div class="step-box">
+          <div class="step-number">1</div>
+          <div class="step-content">
+            <h4>Open SecureNest App</h4>
+            <p>
+              Launch the SecureNest app on your device and sign in to your
+              account.
+            </p>
+          </div>
+        </div>
+
+        <div class="step-box">
+          <div class="step-number">2</div>
+          <div class="step-content">
+            <h4>Navigate to Settings</h4>
+            <p>
+              Go to your profile/settings section by tapping on your profile
+              icon or the settings menu.
+            </p>
+          </div>
+        </div>
+
+        <div class="step-box">
+          <div class="step-number">3</div>
+          <div class="step-content">
+            <h4>Find Delete Account Option</h4>
+            <p>
+              Scroll down to the "Security & Recovery" section and tap on
+              "Delete Account" (displayed with a red warning).
+            </p>
+          </div>
+        </div>
+
+        <div class="step-box">
+          <div class="step-number">4</div>
+          <div class="step-content">
+            <h4>Confirm Your Identity</h4>
+            <p>
+              Enter your master password or use biometric authentication to
+              confirm your identity.
+            </p>
+          </div>
+        </div>
+
+        <div class="step-box">
+          <div class="step-number">5</div>
+          <div class="step-content">
+            <h4>Final Confirmation</h4>
+            <p>
+              Read the warning message carefully and type "DELETE" to confirm
+              you want to permanently delete your account.
+            </p>
+          </div>
+        </div>
+
+        <h3>Method 2: Email Request</h3>
+
+        <div class="info-box">
+          <h3>📧 Contact Us Directly</h3>
+          <p>
+            If you're unable to access the app or prefer to delete your account
+            via email, you can contact us directly:
+          </p>
+          <ul>
+            <li>
+              <strong>Email:</strong>
+              <a href="mailto:contact.securenest@gmail.com" class="contact-link"
+                >contact.securenest@gmail.com</a
+              >
+            </li>
+            <li><strong>Subject:</strong> "Delete My SecureNest Account"</li>
+            <li>
+              <strong>Include:</strong> Your registered email address and
+              account details
+            </li>
+          </ul>
+          <p>
+            <strong>Response Time:</strong> We will process your request within
+            30 days of verification.
+          </p>
+        </div>
+
+        <h2>What Gets Deleted</h2>
+
+        <h3>Data Permanently Removed:</h3>
+        <ul>
+          <li>
+            <strong>All Passwords:</strong> Every password entry stored in your
+            vault
+          </li>
+          <li>
+            <strong>Secure Notes:</strong> All notes and sensitive information
+          </li>
+          <li>
+            <strong>Categories:</strong> Custom categories and organization
+            settings
+          </li>
+          <li>
+            <strong>Account Information:</strong> Email address, user ID, and
+            account metadata
+          </li>
+          <li>
+            <strong>Preferences:</strong> App settings, sync preferences, and
+            biometric settings
+          </li>
+          <li>
+            <strong>Recovery Data:</strong> Recovery codes and backup
+            information
+          </li>
+          <li>
+            <strong>Usage Data:</strong> App usage patterns and session data
+          </li>
+        </ul>
+
+        <h3>Data Retention:</h3>
+        <ul>
+          <li>
+            <strong>No Personal Data Retained:</strong> Due to our
+            zero-knowledge architecture, we cannot access your encrypted data
+          </li>
+          <li>
+            <strong>Anonymized Analytics:</strong> Some anonymized usage
+            statistics may be retained for service improvement (contains no
+            personal information)
+          </li>
+          <li>
+            <strong>Legal Compliance:</strong> Only if required by law and only
+            for the minimum period necessary
+          </li>
+        </ul>
+
+        <h2>Deletion Timeline</h2>
+
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <span class="timeline-time">Immediate:</span>
+              Account access is revoked and login is disabled
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <span class="timeline-time">Within 24 hours:</span>
+              Account marked for deletion and removed from active systems
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <span class="timeline-time">Within 7 days:</span>
+              Grace period ends (for accidental deletions) - data permanently
+              deleted
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <span class="timeline-time">Within 30 days:</span>
+              All account data completely removed from our systems
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <span class="timeline-time">Within 90 days:</span>
+              Data removed from encrypted backups and disaster recovery systems
+            </div>
+          </div>
+        </div>
+
+        <h2>Before You Delete</h2>
+
+        <div class="info-box">
+          <h3>💡 Consider These Alternatives</h3>
+          <ul>
+            <li>
+              <strong>Export Your Data:</strong> Use the export feature to save
+              your passwords in a secure format
+            </li>
+            <li>
+              <strong>Temporary Deactivation:</strong> Contact us if you need a
+              temporary break instead of permanent deletion
+            </li>
+            <li>
+              <strong>Transfer to Another Service:</strong> Export your data to
+              import into another password manager
+            </li>
+            <li>
+              <strong>Resolve Issues:</strong> Contact support if you're having
+              problems - we might be able to help
+            </li>
+          </ul>
+        </div>
+
+        <h2>Recovery After Deletion</h2>
+
+        <div class="warning-box">
+          <h3>🚫 No Recovery Possible</h3>
+          <p>
+            <strong>
+              Once your account is deleted, there is no way to recover your
+              data.
+            </strong>
+          </p>
+          <ul>
+            <li>We cannot restore deleted accounts</li>
+            <li>We cannot recover deleted passwords or notes</li>
+            <li>Creating a new account starts completely fresh</li>
+            <li>
+              Even our technical team cannot access your encrypted data due to
+              zero-knowledge architecture
+            </li>
+          </ul>
+        </div>
+
+        <div class="contact-info">
+          <h2>Need Help?</h2>
+
+          <h3>Contact Information</h3>
+          <p>
+            If you have questions about account deletion or need assistance:
+          </p>
+          <ul>
+            <li>
+              <strong>Email:</strong>
+              <a href="mailto:contact.securenest@gmail.com" class="contact-link"
+                >contact.securenest@gmail.com</a
+              >
+            </li>
+            <li><strong>Response Time:</strong> Within 48 hours</li>
+          </ul>
+
+          <h3>Data Rights</h3>
+          <p>
+            For questions about your data rights or privacy concerns, please
+            contact us using the same email address. We comply with GDPR, CCPA,
+            and other privacy regulations.
+          </p>
+        </div>
+
+        <div class="info-box">
+          <h3>🔐 Zero-Knowledge Security</h3>
+          <p>
+            Your data in SecureNest is encrypted with zero-knowledge
+            architecture, meaning only you can access your passwords and notes.
+            Even our employees cannot view your data, which is why account
+            deletion is permanent and irreversible.
+          </p>
+        </div>
+      </div>
+
+      <div class="footer">
+        <p>&copy; 2025 SecureNest. All rights reserved.</p>
+        <p>
+          <a
+            href="https://victoraj05.github.io/securehive-policies/google-privacy-policy.html"
+            >Privacy Policy</a
+          >
+          |
+          <a href="mailto:contact.securenest@gmail.com">Contact Us</a>
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
